@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+nav a:hover {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.image-container {
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+select {
+    display: block;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #f3f2f2;
+  }
+  
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+output {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+span {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 0px;
+    color:#3499ff;
+}
+
+button[type="submit"],
+button[type="button"] {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0066cc;
+    color: #fff;
+    cursor: pointer;
+    width: 120px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #fff;
+    color: #0066cc;
+    border: 1px solid #0066cc;
+}
+
+#status-result,
+#update-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #ccc;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}

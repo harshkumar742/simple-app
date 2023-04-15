@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Application</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>Loan Application</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#submit-form">Submit Application</a></li>
+      <li><a href="#status-form">Check Status</a></li>
+      <li><a href="#update-form">Update/Delete Application</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="image-container">
+      <img src="img1.jpg" alt="Loan App Image">
+    </div>
+    <section id="submit-form">
+      <h2>Submit a New Loan Application</h2>
+      <form id="submit-application-form">
+        <label for="applicant-name">Applicant Name:</label>
+        <input type="text" id="applicant-name" required>
+
+        <label for="credit-score">Credit Score:</label>
+        <span for="credit-score" id="credit-score-output">600</span>
+        <input type="range" id="credit-score" min="300" max="900" step="1" value="600">
+        
+
+        <label for="loan-amount">Loan Amount:</label>
+        <span for="loan-amount" id="loan-amount-output">100000 ₹</span>
+        <input type="range" id="loan-amount" min="1000" max="5000000" step="1000" value="100000">
+        
+
+        <label for="loan-purpose">Loan Purpose:</label>
+        <select id="loan-purpose" required>
+          <option value="" disabled selected>Select Purpose</option>
+          <option value="Home Improvement">Home Improvement</option>
+          <option value="Debt Consolidation">Debt Consolidation</option>
+          <option value="Education">Education</option>
+          <option value="Business">Business</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="monthly-income">Monthly Income:</label>
+        <span for="monthly-income" id="monthly-income-output">100000 ₹</span>
+        <input type="range" id="monthly-income" min="100000" max="2500000" step="1000" value="100000">
+       
+
+        <label for="monthly-debt">Monthly Debt:</label>
+        <span for="monthly-debt" id="monthly-debt-output">0 ₹</span>
+        <input type="range" id="monthly-debt" min="0" max="2500000" step="1000" value="0">
+       
+
+        <label for="employment-status">Employment Status:</label>
+        <select id="employment-status" required>
+          <option value="" disabled selected>Select Status</option>
+          <option value="Employed">Employed</option>
+          <option value="Self-Employed">Self-Employed</option>
+          <option value="Unemployed">Unemployed</option>
+          <option value="Student">Student</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+
+    <section id="status-form">
+      <h2>Retrieve Status of a Submitted Application</h2>
+      <form id="retrieve-status-form">
+        <label for="application-id">Application ID:</label>
+        <input type="number" id="application-id" required>
+
+        <button type="submit">Retrieve Status</button>
+<div id="status-result"></div>
+</form>
+</section>
+<section id="update-form">
+  <h2>Update or Delete an Existing Application</h2>
+  <form id="update-application-form">
+    <label for="application-id-update">Application ID:</label>
+    <input type="number" id="application-id-update" required>
+
+    <label for="update-field">Update Field:</label>
+    <select id="update-field">
+      <option value="applicant_name">Applicant Name</option>
+      <option value="credit_score">Credit Score</option>
+      <option value="loan_amount">Loan Amount</option>
+      <option value="loan_purpose">Loan Purpose</option>
+      <option value="monthly_income">Monthly Income</option>
+      <option value="monthly_debt">Monthly Debt</option>
+      <option value="employment_status">Employment Status</option>
+      <option value="risk_score">Risk Score</option>
+      <option value="is_approved">Approval Status</option>
+    </select>
+
+    <label for="update-value">New Value:</label>
+    <input type="text" id="update-value" required>
+
+    <button type="submit" id="update-btn">Update</button>
+    <button type="button" id="delete-btn">Delete</button>
+    <div id="update-result"></div>
+  </form>
+</section>
+ </main>
+  <footer>
+    <p>&copy; 2023 Loan App Inc.</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
