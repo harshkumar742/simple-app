@@ -10,7 +10,7 @@ submitForm.addEventListener('submit', (e) => {
   const monthlyIncome = document.getElementById('monthly-income').value;
   const monthlyDebt = document.getElementById('monthly-debt').value;
   const employmentStatus = document.getElementById('employment-status').value;
-  const baseUrl = 'https://43.205.214.87:8000';
+  const baseUrl = 'https://3.108.223.105:8000';
 
   fetch(`${baseUrl}/api/loan_applications`, {
     method: 'POST',
