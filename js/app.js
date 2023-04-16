@@ -4,6 +4,9 @@ const baseUrl = 'https://3e5e-2401-4900-1cb8-283e-e011-3312-8f6-6651.ngrok-free.
 submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block';
+
   const applicantName = document.getElementById('applicant-name').value;
   const creditScore = document.getElementById('credit-score').value;
   const loanAmount = document.getElementById('loan-amount').value;
@@ -38,6 +41,8 @@ submitForm.addEventListener('submit', (e) => {
     .catch(error => {
       console.error(error);
       alert('Error submitting application');
+    }).finally(() => {
+      loader.style.display = 'none';
     });
 });
 
