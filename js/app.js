@@ -34,16 +34,15 @@ submitForm.addEventListener('submit', (e) => {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       loader.style.display = 'none';
+      console.log(data);
       alert('Application submitted successfully!');
       submitForm.reset();
     })
     .catch(error => {
       console.error(error);
+      loader.style.display = 'none';
       alert('Error submitting application');
-    }).finally(() => {
-      
     });
 });
 
@@ -120,6 +119,7 @@ updateForm.addEventListener('submit', (e) => {
     .catch(error => {
       console.error(error);
       loader.style.display = 'none';
+
       alert('Error updating application');
     });
 });
@@ -136,11 +136,14 @@ deleteBtn.addEventListener('click', () => {
     })
       .then(response => {
         console.log(response);
+        loader.style.display = 'none';
+
         updateResult.innerText = `Application (ID: ${applicationId}) deleted successfully.`;
         updateForm.reset();
       })
       .catch(error => {
         console.error(error);
+        loader.style.display = 'none';
         alert('Error deleting application');
       });
   }
