@@ -32,9 +32,9 @@ submitForm.addEventListener('submit', (e) => {
       employment_status: employmentStatus
     })
   })
-    .then(response => { response.json(); loader.style.display = 'none'; })
+    .then(response => response.json())
     .then(data => {
-
+      loader.style.display = 'none';
       console.log(data);
       alert(`Application (ID: ${data.id}) submitted successfully!`);
       submitForm.reset();
@@ -127,7 +127,7 @@ updateForm.addEventListener('submit', (e) => {
 const deleteBtn = document.getElementById('delete-btn');
 
 deleteBtn.addEventListener('click', () => {
-  
+
   const confirmDelete = confirm('Are you sure you want to delete this application?');
 
   if (confirmDelete) {
