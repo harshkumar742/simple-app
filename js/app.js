@@ -32,11 +32,11 @@ submitForm.addEventListener('submit', (e) => {
       employment_status: employmentStatus
     })
   })
-    .then(response => response.json())
+    .then(response => { response.json(); loader.style.display = 'none'; })
     .then(data => {
-      loader.style.display = 'none';
+
       console.log(data);
-      alert('Application submitted successfully!');
+      alert(`Application (ID: ${data.id}) submitted successfully!`);
       submitForm.reset();
     })
     .catch(error => {
@@ -127,9 +127,12 @@ updateForm.addEventListener('submit', (e) => {
 const deleteBtn = document.getElementById('delete-btn');
 
 deleteBtn.addEventListener('click', () => {
+  
   const confirmDelete = confirm('Are you sure you want to delete this application?');
 
   if (confirmDelete) {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
     const applicationId = document.getElementById('application-id-update').value;
     fetch(`${baseUrl}/api/loan_applications/${applicationId}`, {
       method: 'DELETE'
