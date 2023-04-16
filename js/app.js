@@ -69,8 +69,9 @@ retrieveStatusForm.addEventListener('submit', (e) => {
         statusResult.innerText = `Your application (ID: ${data.id}) has been approved!`;
       } else if (data.is_approved === false) {
         statusResult.innerText = `Your application (ID: ${data.id}) has been rejected.`;
+      } else if (data.is_approved === null) {
       } else {
-        statusResult.innerText = `Your application is not found.`;
+        statusResult.innerText = `Your application  is not found.`;
       }
     })
     .catch(error => {
