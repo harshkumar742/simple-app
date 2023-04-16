@@ -35,6 +35,7 @@ submitForm.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      loader.style.display = 'none';
       alert('Application submitted successfully!');
       submitForm.reset();
     })
@@ -42,7 +43,7 @@ submitForm.addEventListener('submit', (e) => {
       console.error(error);
       alert('Error submitting application');
     }).finally(() => {
-      loader.style.display = 'none';
+      
     });
 });
 
@@ -53,12 +54,18 @@ const statusResult = document.getElementById('status-result');
 retrieveStatusForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block';
+
   const applicationId = document.getElementById('application-id').value;
 
   fetch(`${baseUrl}/api/loan_applications/${applicationId}`)
     .then(response => response.json())
     .then(data => {
       console.log(data);
+
+      loader.style.display = 'none';
+
       if (data.is_approved === true) {
         statusResult.innerText = `Your application (ID: ${data.id}) has been approved!`;
       } else if (data.is_approved === false) {
@@ -69,6 +76,7 @@ retrieveStatusForm.addEventListener('submit', (e) => {
     })
     .catch(error => {
       console.error(error);
+      loader.style.display = 'none';
       alert('Error retrieving application status');
     });
 });
@@ -79,6 +87,9 @@ const updateResult = document.getElementById('update-result');
 
 updateForm.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block';
 
   const applicationId = document.getElementById('application-id-update').value;
   const updateField = document.getElementById('update-field').value;
@@ -96,6 +107,8 @@ updateForm.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      loader.style.display = 'none';
+
       if (data.id) {
         updateResult.innerText = `Application (ID: ${data.id}) updated successfully.`;
       }
@@ -106,6 +119,7 @@ updateForm.addEventListener('submit', (e) => {
     })
     .catch(error => {
       console.error(error);
+      loader.style.display = 'none';
       alert('Error updating application');
     });
 });
