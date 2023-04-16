@@ -148,6 +148,7 @@ button[type="button"]:hover {
 #update-result {
     margin-top: 20px;
     font-weight: bold;
+    color: #5d44ff
 }
 
 footer {

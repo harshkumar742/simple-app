@@ -59,7 +59,7 @@ retrieveStatusForm.addEventListener('submit', (e) => {
       } else if (data.is_approved === false) {
         statusResult.innerText = `Your application (ID: ${data.id}) has been rejected.`;
       } else {
-        statusResult.innerText = `Your application (ID: ${data.id}) is still being processed.`;
+        statusResult.innerText = `Your application is not found.`;
       }
     })
     .catch(error => {
@@ -91,7 +91,12 @@ updateForm.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      updateResult.innerText = `Application (ID: ${data.id}) updated successfully.`;
+      if (data.id) {
+        updateResult.innerText = `Application (ID: ${data.id}) updated successfully.`;
+      }
+      else {
+        updateResult.innerText = `Application not found.`;
+      }
       updateForm.reset();
     })
     .catch(error => {
