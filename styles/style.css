@@ -7,10 +7,16 @@ body {
 header {
     background-color: #0066cc;
     color: #fff;
-    padding: 10px;
+    padding: 0px;
 }
 
 header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #282828
+}
+
+header h2 {
     margin: 0;
     font-size: 36px;
 }
@@ -18,7 +24,7 @@ header h1 {
 nav {
     position: sticky;
     top: 0;
-    background-color: #fff;
+    background-color: #fcfcfc;
     border-bottom: 1px solid #ccc;
 }
 
@@ -31,7 +37,8 @@ nav ul {
 }
 
 nav li {
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 nav a {
@@ -51,16 +58,17 @@ main {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 40px;
+    margin: 50px;
+    margin-top: 5px;
 }
 
 section {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .image-container {
-    width: 50%;
+    width: 100%;
 }
 
 .image-container img {
@@ -74,8 +82,10 @@ form {
 }
 
 label {
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
     font-weight: bold;
+    color: rgb(64,64,64);
 }
 
 select {
