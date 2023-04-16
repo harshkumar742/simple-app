@@ -70,6 +70,7 @@ retrieveStatusForm.addEventListener('submit', (e) => {
       } else if (data.is_approved === false) {
         statusResult.innerText = `Your application (ID: ${data.id}) has been rejected.`;
       } else if (data.is_approved === null) {
+        statusResult.innerText = `Your application (ID: ${data.id}) is currently being processed.`;
       } else {
         statusResult.innerText = `Your application  is not found.`;
       }
