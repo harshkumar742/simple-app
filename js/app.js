@@ -153,7 +153,7 @@ deleteBtn.addEventListener('click', () => {
         if (response.status === 200) {
           updateResult.innerText = `Application (ID: ${applicationId}) deleted successfully.`;
         }
-        else if (response.status === 500) {
+        else if (response.status === 500 || response.status === 405) {
           updateResult.innerText = `Application (ID: ${applicationId}) not found`;
         }
         updateForm.reset();
