@@ -58,7 +58,13 @@ retrieveStatusForm.addEventListener('submit', (e) => {
 
   const applicationId = document.getElementById('application-id').value;
 
-  fetch(`${baseUrl}/api/loan_applications/${applicationId}`)
+  fetch(`${baseUrl}/api/loan_applications/${applicationId}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    }
+  })
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -99,7 +105,8 @@ updateForm.addEventListener('submit', (e) => {
   fetch(`${baseUrl}/api/loan_applications/${applicationId}`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify({
       [updateField]: updateValue
@@ -137,7 +144,8 @@ deleteBtn.addEventListener('click', () => {
     loader.style.display = 'block';
     const applicationId = document.getElementById('application-id-update').value;
     fetch(`${baseUrl}/api/loan_applications/${applicationId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      'Access-Control-Allow-Origin': '*'
     })
       .then(response => {
         console.log(response);
