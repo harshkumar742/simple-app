@@ -1,5 +1,5 @@
 const submitForm = document.getElementById('submit-application-form');
-const baseUrl = 'https://3e5e-2401-4900-1cb8-283e-e011-3312-8f6-6651.ngrok-free.app';
+const baseUrl = 'https://e12b-2401-4900-1cb8-283e-ccb3-c52-1e97-8f64.ngrok-free.app';
 
 submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
