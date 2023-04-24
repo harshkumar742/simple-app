@@ -1,5 +1,5 @@
 const submitForm = document.getElementById('submit-application-form');
-const baseUrl = ' https://9131-2401-4900-1f25-2268-b01d-e8b-4305-476f.ngrok-free.app';
+const baseUrl = 'https://306b-2401-4900-1f25-2268-b01d-e8b-4305-476f.ngrok-free.app';
 
 // Listen for SSE notifications
 const eventSource = new EventSource(`${baseUrl}/api/notifications`);
