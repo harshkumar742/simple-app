@@ -1,5 +1,23 @@
 const submitForm = document.getElementById('submit-application-form');
-const baseUrl = 'https://997f-2401-4900-1cb8-283e-5dd8-903-19a0-c064.ngrok-free.app';
+const baseUrl = ' https://9131-2401-4900-1f25-2268-b01d-e8b-4305-476f.ngrok-free.app';
+
+// Listen for SSE notifications
+const eventSource = new EventSource(`${baseUrl}/api/notifications`);
+
+eventSource.onmessage = (event) => {
+  const notification = JSON.parse(event.data);
+
+  // Update UI based on notification type
+  if (notification.type === 'application_approved') {
+    const applicationId = notification.payload.id;
+    const statusResult = document.getElementById('status-result');
+    statusResult.innerText = `Your application (ID: ${applicationId}) has been approved!`;
+  } else if (notification.type === 'application_rejected') {
+    const applicationId = notification.payload.id;
+    const statusResult = document.getElementById('status-result');
+    statusResult.innerText = `Your application (ID: ${applicationId}) has been rejected.`;
+  }
+};
 
 submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
